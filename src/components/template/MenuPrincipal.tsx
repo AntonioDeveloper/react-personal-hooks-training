@@ -1,4 +1,4 @@
-import { IconMenu, IconX, IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock } from "@tabler/icons";
+import { IconMenu, IconX, IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart } from "@tabler/icons";
 import { MenuItem } from "../../data/models/MenuItem";
 import { MenuSecao } from "../../data/models/MenuSecao";
 import Logo from "./Logo";
@@ -86,6 +86,18 @@ export default function MenuPrincipal() {
                     url: "/personalizados/senha",
                     tag: "personalizados",
                     icone: <IconLock />
+                },
+            ]
+        },
+        {
+            titulo: "Contexto",
+            aberta: true,
+            itens: [
+                {
+                    titulo: "Loja",
+                    url: "/contexto/loja",
+                    tag: "useContext",
+                    icone: <IconShoppingCart />
                 },
             ]
         },
