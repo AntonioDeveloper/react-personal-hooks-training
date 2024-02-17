@@ -1,122 +1,18 @@
-import { IconMenu, IconX, IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart } from "@tabler/icons";
+import { IconMenu, IconX } from "@tabler/icons";
 import { MenuItem } from "../../data/models/MenuItem";
 import { MenuSecao } from "../../data/models/MenuSecao";
 import Logo from "./Logo";
 import MenuPrincipalItem from "./MenuPrincipalItem";
 import MenuPrincipalSecao from "./MenuPrincipalSecao";
 import Flex from "./Flex";
-import useTamanhoJanela from "@/data/hooks/useTamanhoJanela";
-import { useEffect } from "react";
-import useBoolean from "@/data/hooks/useBoolean";
+import useMenu from "@/data/hooks/useMenu";
 
 export default function MenuPrincipal() {
-    const secoes = [
-        {
-            titulo: "Essenciais",
-            aberta: true,
-            itens: [
-                {
-                    titulo: "Contador",
-                    url: "/essenciais/contador",
-                    tag: "useState",
-                    icone: <IconNumbers />
-                },
-                {
-                    titulo: "Votação",
-                    url: "/essenciais/votacao",
-                    tag: "useState",
-                    icone: <IconUsers />
-                },
-                {
-                    titulo: "Consulta À API",
-                    url: "/essenciais/consultaAPI",
-                    tag: "useEffect",
-                    icone: <IconArrowsLeftRight />
-                },
-                {
-                    titulo: "Maior",
-                    url: "/essenciais/maior",
-                    tag: "useEffect",
-                    icone: <IconMathGreater />
-                },
-                {
-                    titulo: "Contador de Caracteres",
-                    url: "/essenciais/contagemCaracters",
-                    tag: "useEffect",
-                    icone: <IconLetterCase />
-                },
-                {
-                    titulo: "State VS Referência",
-                    url: "/essenciais/stateVSRef",
-                    tag: "useRef",
-                    icone: <IconRefreshAlert />
-                },
-                {
-                    titulo: "Referenciando elementos",
-                    url: "/essenciais/refElemento",
-                    tag: "useRef",
-                    icone: <IconSection />
-                },
-                {
-                    titulo: "Contagem Caracteres Ref",
-                    url: "/essenciais/contagemCaracteresRef",
-                    tag: "useRef",
-                    icone: <IconLetterCase />
-                },
-            ],
-        },
-        {
-            titulo: "Personalizados",
-            aberta: true,
-            itens: [
-                {
-                    titulo: "Modal",
-                    url: "/personalizados/modal",
-                    tag: "personalizados",
-                    icone: <IconAppWindow />
-                },
-                {
-                    titulo: "Tamanho Janela",
-                    url: "/personalizados/tamanhoJanela",
-                    tag: "personalizados",
-                    icone: <IconDimensions />
-                },
-                {
-                    titulo: "Validando Senha",
-                    url: "/personalizados/senha",
-                    tag: "personalizados",
-                    icone: <IconLock />
-                },
-            ]
-        },
-        {
-            titulo: "Contexto",
-            aberta: true,
-            itens: [
-                {
-                    titulo: "Loja",
-                    url: "/contexto/loja",
-                    tag: "useContext",
-                    icone: <IconShoppingCart />
-                },
-            ]
-        },
-    ];
-
-    const [mini, toggleMini, miniTrue, miniFalse] = useBoolean(false);
-    let tamanho = useTamanhoJanela();
-
-    useEffect(() => {
-        if (tamanho === "md" || tamanho === "sm") {
-            miniTrue();
-        }
-        if (tamanho === "lg" || tamanho === "xl" || tamanho === "2xl") {
-            miniFalse();
-        }
-    }, [tamanho]);
+    const { secoes } = useMenu();
+    const { mini, toggleMini } = useMenu();
 
     function renderizarSecoes() {
-        return secoes.map((secao: MenuSecao) => (
+        return secoes?.map((secao: MenuSecao) => (
             <MenuPrincipalSecao key={secao.titulo} titulo={secao.titulo} mini={mini} aberta={secao.aberta}>
                 {renderizarItens(secao)}
             </MenuPrincipalSecao>
@@ -124,6 +20,7 @@ export default function MenuPrincipal() {
     }
 
     function renderizarItens(secao: MenuSecao) {
+        console.log("secao", secao);
         return secao.itens.map((item: MenuItem) => (
             <MenuPrincipalItem
                 key={`${item.titulo}-${item.tag}`}
@@ -132,6 +29,7 @@ export default function MenuPrincipal() {
                 tag={item.tag}
                 url={item.url}
                 mini={mini}
+                selecionado={item.selecionado}
             />
         ));
     }
