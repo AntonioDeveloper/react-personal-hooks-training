@@ -3,6 +3,7 @@ import secoesMenu from "../constants/secoesMenu";
 import useBoolean from "../hooks/useBoolean";
 import useTamanhoJanela from "../hooks/useTamanhoJanela";
 import { useRouter } from "next/router";
+import { MenuSecao } from "../models/MenuSecao";
 
 const ContextoMenu = createContext({} as any);
 
@@ -39,9 +40,19 @@ export function MenuProvider(props: any) {
     return novasSecoes;
   }
 
+  function alternarSecao(secaoSelecionada: MenuSecao) {
+    let novasSecoes = secoes.map((secao: any) => {
+      if (secao.titulo === secaoSelecionada.titulo) {
+        return { ...secao, aberta: !secao.aberta }
+      } else {
+        return secao;
+      }
+    });
+    setSecoes(() => novasSecoes);
+  }
 
   return (
-    <ContextoMenu.Provider value={{ secoes, mini, toggleMini }}>
+    <ContextoMenu.Provider value={{ secoes, mini, toggleMini, alternarSecao }}>
       {props.children}
     </ContextoMenu.Provider>
   );

@@ -1,6 +1,7 @@
 interface DisplayProps {
     texto: any;
     textoComplementar?: string;
+    children?: any;
 }
 
 export default function Display(props: DisplayProps) {

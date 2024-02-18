@@ -9,18 +9,17 @@ import useMenu from "@/data/hooks/useMenu";
 
 export default function MenuPrincipal() {
     const { secoes } = useMenu();
-    const { mini, toggleMini } = useMenu();
+    const { mini, toggleMini, alternarSecao } = useMenu();
 
     function renderizarSecoes() {
         return secoes?.map((secao: MenuSecao) => (
-            <MenuPrincipalSecao key={secao.titulo} titulo={secao.titulo} mini={mini} aberta={secao.aberta}>
+            <MenuPrincipalSecao key={secao.titulo} titulo={secao.titulo} mini={mini} aberta={secao.aberta} onClick={() => alternarSecao(secao)}>
                 {renderizarItens(secao)}
             </MenuPrincipalSecao>
         ));
     }
 
     function renderizarItens(secao: MenuSecao) {
-        console.log("secao", secao);
         return secao.itens.map((item: MenuItem) => (
             <MenuPrincipalItem
                 key={`${item.titulo}-${item.tag}`}

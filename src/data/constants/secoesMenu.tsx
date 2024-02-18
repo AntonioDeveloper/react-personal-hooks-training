@@ -1,9 +1,9 @@
-import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart } from "@tabler/icons";
+import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin } from "@tabler/icons";
 
 const secoesMenu = [
   {
     titulo: "Essenciais",
-    aberta: true,
+    aberta: false,
     itens: [
       {
         titulo: "Contador",
@@ -57,7 +57,7 @@ const secoesMenu = [
   },
   {
     titulo: "Personalizados",
-    aberta: true,
+    aberta: false,
     itens: [
       {
         titulo: "Modal",
@@ -81,13 +81,25 @@ const secoesMenu = [
   },
   {
     titulo: "Contexto",
-    aberta: true,
+    aberta: false,
     itens: [
       {
         titulo: "Loja",
         url: "/contexto/loja",
         tag: "useContext",
         icone: <IconShoppingCart />
+      },
+    ]
+  },
+  {
+    titulo: "Outros",
+    aberta: true,
+    itens: [
+      {
+        titulo: "Memoizando elementos",
+        url: "/outros/memoizacao",
+        tag: "useMemo",
+        icone: <IconPin />
       },
     ]
   },
