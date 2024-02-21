@@ -101,6 +101,12 @@ const secoesMenu = [
         tag: "useMemo",
         icone: <IconPin />
       },
+      {
+        titulo: "Memoizando Funçoes",
+        url: "/outros/memoizandoFuncoes",
+        tag: "useCallback",
+        icone: <IconPin />
+      },
     ]
   },
 ];

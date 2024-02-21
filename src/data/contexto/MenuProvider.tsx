@@ -35,7 +35,7 @@ export function MenuProvider(props: any) {
       let novosItens = secao.itens.map((item: any) => {
         return { ...item, selecionado: item.url === url }
       });
-      return { ...secao, items: novosItens };
+      return { ...secao, itens: novosItens };
     });
     return novasSecoes;
   }

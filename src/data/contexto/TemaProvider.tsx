@@ -6,7 +6,7 @@ export function TemaProvider(props: { children: string | number | boolean | Reac
   const cores = ["blue-500", "red-400", "pink-500", "orange-500", "green-500", "purple-500",
     "yellow-600"];
 
-  const [corDestaque, setCorDestaque] = useState<any>();
+  const [corDestaque, setCorDestaque] = useState<any>(cores[0]);
 
   const ctx = { cores, corDestaque, setCorDestaque };
 

@@ -23,7 +23,7 @@ export default function MenuPrincipalItem(props: MenuItemProps) {
             className={`
             flex items-center gap-2 text-zinc-400 rounded-md
             hover:bg-zinc-800 px-3 py-2
-            ${selecionado && `text-${corDestaque} bg-zinc-900`}
+            ${selecionado ? `text-${corDestaque}` : 'text-zinc-400'}
         `}
         >
             {icone ?? <IconCode />}

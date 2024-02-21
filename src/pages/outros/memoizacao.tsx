@@ -2,7 +2,7 @@ import InputFormatado from "@/components/formulario/InputFormatado";
 import Display from "@/components/template/Display";
 import Flex from "@/components/template/Flex";
 import Pagina from "@/components/template/Pagina";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 export default function () {
 
@@ -11,12 +11,13 @@ export default function () {
   const [numero3, setNumero3] = useState(1);
   const [numero4, setNumero4] = useState(1);
 
-  let potencia = useMemo(() => {
+  // let potencia = numero1 ** numero2;
+
+  function potencia() {
     let future = Date.now() + 3000;
     while (Date.now() < future);
     return numero1 ** numero2;
-  }, [numero1, numero2]);
-
+  };
 
   let soma = numero3 + numero4;
 
@@ -32,7 +33,7 @@ export default function () {
               {numero2}
             </sup>
             <span>
-              = {potencia}
+              = {potencia()}
             </span>
           </>
         }>
