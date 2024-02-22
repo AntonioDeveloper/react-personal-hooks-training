@@ -1,4 +1,4 @@
-import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin } from "@tabler/icons";
+import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin, IconForms } from "@tabler/icons";
 
 const secoesMenu = [
   {
@@ -106,6 +106,12 @@ const secoesMenu = [
         url: "/outros/memoizandoFuncoes",
         tag: "useCallback",
         icone: <IconPin />
+      },
+      {
+        titulo: "Formulário 1",
+        url: "/outros/formularioImperativeHandle",
+        tag: "useImperativeHandle",
+        icone: <IconForms />
       },
     ]
   },
