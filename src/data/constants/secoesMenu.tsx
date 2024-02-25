@@ -1,4 +1,4 @@
-import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin, IconForms } from "@tabler/icons";
+import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin, IconForms, IconColorSwatch } from "@tabler/icons";
 
 const secoesMenu = [
   {
@@ -112,6 +112,12 @@ const secoesMenu = [
         url: "/outros/formularioImperativeHandle",
         tag: "useImperativeHandle",
         icone: <IconForms />
+      },
+      {
+        titulo: "Gerador de Cor",
+        url: "/outros/geradorDeCor",
+        tag: "useLayoutEffect",
+        icone: <IconColorSwatch />
       },
     ]
   },

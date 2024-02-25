@@ -14,7 +14,6 @@ interface MenuItemProps {
 export default function MenuPrincipalItem(props: MenuItemProps) {
     const { icone, titulo, tag, url, mini, selecionado } = props;
     const { corDestaque } = useTema();
-    console.log("selecionado", props);
 
     return (
         <Link

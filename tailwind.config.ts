@@ -14,5 +14,12 @@ const config: Config = {
         { pattern: /^bg-/ },
     ],
     plugins: [require("tailwind-scrollbar")],
+    geraCorAleatoria: function () {
+        let cor = "";
+        const numeroAleatorioHexadecimal = Math.floor(Math.random() * 0xffffff);
+        cor = numeroAleatorioHexadecimal.toString(16);
+        console.log(cor, `#${cor} hex`);
+        return `#${cor}`;
+    },
 };
 module.exports = config;
