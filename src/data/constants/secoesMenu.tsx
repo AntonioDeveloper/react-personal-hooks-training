@@ -1,4 +1,4 @@
-import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin, IconForms, IconColorSwatch } from "@tabler/icons";
+import { IconNumbers, IconUsers, IconArrowsLeftRight, IconMathGreater, IconLetterCase, IconRefreshAlert, IconSection, IconAppWindow, IconDimensions, IconLock, IconShoppingCart, IconPin, IconForms, IconColorSwatch, IconDatabase } from "@tabler/icons";
 
 const secoesMenu = [
   {
@@ -118,6 +118,12 @@ const secoesMenu = [
         url: "/outros/geradorDeCor",
         tag: "useLayoutEffect",
         icone: <IconColorSwatch />
+      },
+      {
+        titulo: "Soma com State",
+        url: "/outros/somaState",
+        tag: "useState",
+        icone: <IconDatabase />
       },
     ]
   },

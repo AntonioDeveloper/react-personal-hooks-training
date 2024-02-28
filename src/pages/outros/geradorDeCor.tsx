@@ -40,7 +40,7 @@ export default function () {
         <Botao texto="Apagar Cor" onClick={() => { setCor("") }} />
       </Flex>
       <Display texto={displayTxt} />
-      <div ref={elementDivRef} className={`h-32 w-32 bg-dynamic-primary`}></div>
+      <div ref={elementDivRef} className={`h-32 w-32 `}></div>
     </Pagina>
   )
 }
